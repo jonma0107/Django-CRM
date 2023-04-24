@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'dcrmproject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # default='postgresql://postgres:postgres@localhost/postgres',
-        default='sqlite:///db.sqlite3'
+        default='sqlite:///db.sqlite3',
         conn_max_age=600
     )
 }
