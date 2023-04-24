@@ -3,7 +3,6 @@
 {% block content %}
 
 <div class="col-md-6 offset-md-3">
-
     
     {% if user.is_authenticated %}
 
@@ -12,19 +11,20 @@
     {% else %}        
     
     <h1>Login</h1>
-    <form action="{% url 'home' %}" method="post">
+    <form action="{% url 'home' %}" method="POST">
         {% csrf_token %}
-        {% comment %} <form> {% endcomment %}
-            <div class="mb-3">
-                <input type="text" class="form-control" name="username" placeholder="User name" required>                
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            
-            <button type="submit" class="btn btn-secondary">Login</button>
-        {% comment %} </form> {% endcomment %}
+        
+        <div class="mb-3">
+            <input type="text" class="form-control" name="username" placeholder="User name" required>                
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+        </div>
+        
+        <button type="submit" class="btn btn-secondary">Login</button>
+        
     </form>
+
 </div>
 
 {% endif %}
