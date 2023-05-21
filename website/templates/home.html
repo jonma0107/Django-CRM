@@ -31,7 +31,9 @@
                             <td>{{ client.state }}</td>
                             <td>{{ client.zipcode }}</td>
                             <td>{{ client.created_at }}</td>
-                            <td><a href="{% url 'client' client.id %}">{{ client.id }}</a></td>
+                            <td>
+                                <a href="{% url 'client' client.id %}">{{ client.id }}</a>
+                            </td>
                         {% endfor %}
                     {% endif %}
                 </tr>
