@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="pt-5">
+    <div class="col-md-6 offset-md-3 pt-5">
         <div class="card">
             <div class="card-header">
                 <strong>{{ customer_client.first_name }}
@@ -34,8 +34,9 @@
             </div>
         </div>
     </div>
-
-    <a href="{% url 'home'%}" class="btn btn-secondary mt-3">Back</a>
-    <a href="{% url 'delete_client' customer_client.id %}" class="btn btn-danger mt-3">Delete</a>
-
+    <div class="d-flex justify-content-center gap-3 mt-3">
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        <a href="{% url 'delete_client' customer_client.id %}"
+           class="btn btn-danger">Delete</a>
+    </div>
 {% endblock content %}
