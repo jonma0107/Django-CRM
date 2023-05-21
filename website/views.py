@@ -71,7 +71,7 @@ def add_client(request):
     if request.user.is_authenticated:
         if request.method == "POST":
             if form.is_valid():
-                add_client = form.save()
+                form.save()
                 messages.success(request, "Client added")
                 return redirect('home')
 
@@ -79,6 +79,20 @@ def add_client(request):
     else:
         messages.success(request, "You Must Be Logged!")
         return redirect('home')
+
+def update_client(request, pk):
+    if request.user.is_authenticated:
+        current_client = Client.objects.get(id=pk)
+        form = AddClientForm(request.POST or None, instance=current_client)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Client has been updated")
+            return redirect('home')
+        return render(request, 'update_client.html', {'form':form}) 
+    else:
+        messages.success(request, "You Must Be Logged!")
+        return redirect('home')       
+
 
 
 

@@ -33,7 +33,6 @@ class SignUpForm(UserCreationForm):
 # CREATE ADD CLIENT FORM
 
 class AddClientForm(forms.ModelForm):
-    # created_at = 
     first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class": "form-control"}), label="")
     last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Last Name", "class": "form-control"}), label="")
     email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Email", "class": "form-control"}), label="")

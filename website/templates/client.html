@@ -8,28 +8,28 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    <strong>Email:</strong>{{ customer_client.email }}
+                    <strong>Email: </strong>{{ customer_client.email }}
                 </p>
                 <p class="card-text">
-                    <strong>Phone:</strong>{{ customer_client.phone }}
+                    <strong>Phone: </strong>{{ customer_client.phone }}
                 </p>
                 <p class="card-text">
-                    <strong>Address:</strong>{{ customer_client.address }}
+                    <strong>Address: </strong>{{ customer_client.address }}
                 </p>
                 <p class="card-text">
-                    <strong>City:</strong>{{ customer_client.city }}
+                    <strong>City: </strong>{{ customer_client.city }}
                 </p>
                 <p class="card-text">
-                    <strong>State:</strong>{{ customer_client.state }}
+                    <strong>State: </strong>{{ customer_client.state }}
                 </p>
                 <p class="card-text">
-                    <strong>Zipcode:</strong>{{ customer_client.zipcode }}
+                    <strong>Zipcode: </strong>{{ customer_client.zipcode }}
                 </p>
                 <p class="card-text">
-                    <strong>Created:</strong>{{ customer_client.created_at }}
+                    <strong>Created: </strong>{{ customer_client.created_at }}
                 </p>
                 <p class="card-text">
-                    <strong>id:</strong>{{ customer_client.id }}
+                    <strong>id: </strong>{{ customer_client.id }}
                 </p>
             </div>
         </div>
@@ -38,5 +38,7 @@
         <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
         <a href="{% url 'delete_client' customer_client.id %}"
            class="btn btn-danger">Delete</a>
+        <a href="{% url 'update_client' customer_client.id %}"
+           class="btn btn-warning">Update Client</a>
     </div>
 {% endblock content %}
