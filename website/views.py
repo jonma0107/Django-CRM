@@ -45,5 +45,14 @@ def register_user(request):
     else:
         form = SignUpForm()
         return render(request, 'register.html', {'form':form})
-    return render(request, 'register.html', {'form':form})    
+    return render(request, 'register.html', {'form':form})   
+
+def customer_client(request, pk):
+    if request.user.is_authenticated:
+        # Look Up Clients
+        customer_client = Client.objects.get(id = pk)
+        return render(request, 'client.html', {'customer_client':customer_client})
+    else:
+        messages.success(request, "You Must Be Logged!")
+        return redirect('home')    
 

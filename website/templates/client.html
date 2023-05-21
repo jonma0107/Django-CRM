@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+<h1 class="pt-5">Customer Client</h1>
+
+{{customer_client.first_name}}
+{{customer_client.last_name}}<br/>
+{{customer_client.email}}<br/>
+{{customer_client.phone}}<br/>
+{{customer_client.address}}<br/>
+{{customer_client.city}}<br/>
+{{customer_client.state}}<br/>
+{{customer_client.zipcode}}<br/>
+{{customer_client.created_at}}<br/>
+{{customer_client.id}}<br/>
+
+{% endblock content %}
