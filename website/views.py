@@ -54,5 +54,16 @@ def customer_client(request, pk):
         return render(request, 'client.html', {'customer_client':customer_client})
     else:
         messages.success(request, "You Must Be Logged!")
-        return redirect('home')    
+        return redirect('home')
+
+def delete_client(request, pk):
+    if request.user.is_authenticated:
+        delete_it = Client.objects.get(id=pk)
+        delete_it.delete()
+        messages.success(request, "Client deleted successfully!")
+        return redirect('home')
+    else:
+        messages.success(request, "You Must Be Logged!")
+        return redirect('home')
+
 
